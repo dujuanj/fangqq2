@@ -38,7 +38,7 @@ const Login: React.FC = () => {
     <div className="login-container">
           {/* QQ Logo */}
           <div className="top">
-              <div className="back-arrow">
+              <div className="back-arrow" onClick={() => navigate('/BeforeLogin')}>
                   <img src="back-arrow.png" alt="" />
               </div>
           </div>

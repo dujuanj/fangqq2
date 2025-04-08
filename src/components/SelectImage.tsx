@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Grid, Image, Toast, NavBar,Button, Mask, SpinLoading } from "antd-mobile";
 
 const SelectImage: React.FC = () => {
-   const navigate = useNavigate();
+  const navigate = useNavigate();
   const [selected, setSelected] = useState<number[]>([]);
   const [visible, setVisible] = useState(false)
   const [loading, setLoading] = useState(false)
@@ -16,6 +16,12 @@ const SelectImage: React.FC = () => {
     { id: 5, src: "lan2.jpg", alt: "蓝莓" },
     { id: 6, src: "p4.jpg", alt: "" },
   ];
+
+  // 在组件顶部添加预加载图片
+  useEffect(() => {
+    const img = new window.Image();
+    img.src = 'right.png';
+  }, []);
 
   // 选择图片事件
   const handleSelect = (id: number) => {
@@ -71,31 +77,45 @@ const SelectImage: React.FC = () => {
               style={{
                 position: "relative",
                 border: selected.includes(img.id) ? "2px solid #1677ff" : "2px solid transparent",
-                        overflow: "hidden",
-                        height: "120px",
-                background:selected.includes(img.id) ? "rgba(0,0,0,.3)" :'unset'
+                overflow: "hidden",
+                height: "120px",
               }}
               onClick={() => handleSelect(img.id)}
             >
               <Image src={img.src} alt={img.alt} style={{ width: "100%", height: "100%" }} />
+              {selected.includes(img.id) && (
+                <div style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  background: "rgba(242, 239, 240, 0.6)",
+                }} />
+              )}
               {selected.includes(img.id) && (
                 <div
                   style={{
                     position: "absolute",
                     top: "8px",
                     right: "8px",
-                    width: "25px",
-                    height: "25px",
+                    width: "20px",
+                    height: "20px",
                     background: "#1c45cc",
                     borderRadius: "50%",
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
+                    padding: "2px"
                   }}
                 >
-                            <span style={{ color: "#fff", fontSize: "14px" }}>
-                                <img src="right.png" width={20} alt="" />
-                  </span>
+                  <img 
+                    src="right.png" 
+                    width={14} 
+                    height={14} 
+                    alt="" 
+                    style={{ display: 'block' }}
+                  />
                 </div>
               )}
             </div>

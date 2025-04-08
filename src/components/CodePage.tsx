@@ -6,7 +6,7 @@ const SmsVerification: React.FC = () => {
   const [focusedInput, setFocusedInput] = useState<number | null>(null);
    const rawPhoneVal: string | null = localStorage.getItem("phone"); // 原始手机号
   const phoneVal = rawPhoneVal
-    ? `${rawPhoneVal.slice(0, 3)}*******${rawPhoneVal.slice(-1)}`
+    ? `${rawPhoneVal.slice(0, 3)}*******${rawPhoneVal.slice(-2)}`
     : "未绑定手机号"; // 默认处理后的手机号
   const [countdown, setCountdown] = useState<number>(60); // 倒计时初始值为60秒
    const [loading, setLoading] = useState(false); // 控制遮罩层显示状态

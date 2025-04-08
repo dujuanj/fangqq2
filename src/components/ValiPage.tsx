@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { NavBar, Toast,Space,Button } from 'antd-mobile'
+import { NavBar, Toast} from 'antd-mobile'
 import SelectImage from "./SelectImage";
 
 const ValiPage: React.FC = () => {

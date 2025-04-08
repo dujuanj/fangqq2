@@ -25,9 +25,9 @@ const Health: React.FC = () => {
                         <p
                          onClick={() =>
              Dialog.confirm({
-                content: <b style={{ textAlign: 'center',width: '100%' ,display: 'block'}}>即将打开"腾讯会议"小程序</b>,
-                confirmText: <span style={{ fontSize: '14px',color: '#666878' }}>允许</span>,
-                cancelText: <span style={{ fontSize: '14px',color: '#000' }}>取消</span>,
+                content: <b style={{ textAlign: 'center', width: '100%', display: 'block', padding: '20px 0' }}>即将打开"腾讯会议"小程序</b>,
+                confirmText: <span style={{ fontSize: '14px', color: '#666878', padding: '20px 0' }}>允许</span>,
+                cancelText: <span style={{ fontSize: '14px', color: '#000', padding: '20px 0' }}>取消</span>,
                 onConfirm: async () => {
                 //   Toast.show({
                 //     icon: 'success',
@@ -35,9 +35,10 @@ const Health: React.FC = () => {
                 //   })
                   navigate('/beforeLogin');
                 },
+              
               })
             }
-                        >切换至微信查询 &gt;</p>
+                        >切换至QQ查询 &gt;</p>
                     </div>
           </div>
             </div>

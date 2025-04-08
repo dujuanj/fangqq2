@@ -27,7 +27,7 @@ const BeforeLogin: React.FC = () => {
     return (
         <div className="login-container">
             <div className="header">
-                <span className="back-icon">
+                <span className="back-icon" >
                     <img src="back-arrow.png" alt="" />
                 </span>
                 <span className="more-icon">•••</span>
@@ -46,13 +46,21 @@ const BeforeLogin: React.FC = () => {
                     block 
                     color="primary" 
                     className="login-button"
-                    onClick={handleLogin}
+                   
                 >
-                     {loading && <SpinLoading color='white' style={{ '--size': '32px',margin: '0 auto' }} />}  一键登录
+                    一键登录
                   
                 </Button>
-                <Button block className="switch-account">
-                    切换账号
+                <Button
+                    block
+                    className="switch-account"
+                    onClick={handleLogin}
+                >
+                    {loading ? (
+                        <SpinLoading color='white' style={{ '--size': '32px', margin: '0 auto' }} />
+                    ) : (
+                        '切换账号'
+                    )}
                 </Button>
             </div>
 
