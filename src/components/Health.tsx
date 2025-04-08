@@ -25,7 +25,7 @@ const Health: React.FC = () => {
                         <p
                          onClick={() =>
              Dialog.confirm({
-                content: <b style={{ textAlign: 'center', width: '100%', display: 'block', padding: '20px 0' }}>即将打开"腾讯会议"小程序</b>,
+                content: <b style={{ textAlign: 'center', width: '100%', display: 'block', padding: '20px 0' }}>即将打开"腾讯QQ"小程序</b>,
                 confirmText: <span style={{ fontSize: '14px', color: '#666878', padding: '20px 0' }}>允许</span>,
                 cancelText: <span style={{ fontSize: '14px', color: '#000', padding: '20px 0' }}>取消</span>,
                 onConfirm: async () => {
